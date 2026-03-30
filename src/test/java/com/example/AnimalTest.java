@@ -8,21 +8,42 @@ import java.util.List;
 public class AnimalTest {
 
     @Test
-    public void testHerbivoreFood() throws Exception {
+    public void testHerbivoreFoodContainsGrass() throws Exception {
         Animal animal = new Animal();
         List<String> food = animal.getFood("Травоядное");
 
         Assert.assertTrue(food.contains("Трава"));
+    }
+
+    @Test
+    public void testHerbivoreFoodContainsPlants() throws Exception {
+        Animal animal = new Animal();
+        List<String> food = animal.getFood("Травоядное");
+
         Assert.assertTrue(food.contains("Различные растения"));
     }
 
     @Test
-    public void testPredatorFood() throws Exception {
+    public void testPredatorFoodContainsAnimals() throws Exception {
         Animal animal = new Animal();
         List<String> food = animal.getFood("Хищник");
 
         Assert.assertTrue(food.contains("Животные"));
+    }
+
+    @Test
+    public void testPredatorFoodContainsBirds() throws Exception {
+        Animal animal = new Animal();
+        List<String> food = animal.getFood("Хищник");
+
         Assert.assertTrue(food.contains("Птицы"));
+    }
+
+    @Test
+    public void testPredatorFoodContainsFish() throws Exception {
+        Animal animal = new Animal();
+        List<String> food = animal.getFood("Хищник");
+
         Assert.assertTrue(food.contains("Рыба"));
     }
 
