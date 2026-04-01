@@ -10,17 +10,31 @@ public class CatTest {
     @Test
     public void getSoundTest() {
         Cat cat = new Cat(new Feline());
-        String sound = cat.getSound();
 
-        Assert.assertEquals("Мяу", sound);
+        Assert.assertEquals("Мяу", cat.getSound());
     }
 
     @Test
-    public void getFoodTest() throws Exception {
+    public void getFoodContainsMeatTest() throws Exception {
         Cat cat = new Cat(new Feline());
         List<String> food = cat.getFood();
 
-        Assert.assertEquals(3, food.size());
         Assert.assertTrue(food.contains("Животные"));
+    }
+
+    @Test
+    public void getFoodContainsBirdsTest() throws Exception {
+        Cat cat = new Cat(new Feline());
+        List<String> food = cat.getFood();
+
+        Assert.assertTrue(food.contains("Птицы"));
+    }
+
+    @Test
+    public void getFoodContainsFishTest() throws Exception {
+        Cat cat = new Cat(new Feline());
+        List<String> food = cat.getFood();
+
+        Assert.assertTrue(food.contains("Рыба"));
     }
 }

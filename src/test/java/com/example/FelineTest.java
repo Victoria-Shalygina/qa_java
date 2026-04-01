@@ -8,35 +8,47 @@ import java.util.List;
 public class FelineTest {
 
     @Test
-    public void eatMeatTest() throws Exception {
+    public void eatMeatContainsAnimalsTest() throws Exception {
         Feline feline = new Feline();
         List<String> food = feline.eatMeat();
 
-        Assert.assertEquals(3, food.size());
         Assert.assertTrue(food.contains("Животные"));
+    }
+
+    @Test
+    public void eatMeatContainsBirdsTest() throws Exception {
+        Feline feline = new Feline();
+        List<String> food = feline.eatMeat();
+
+        Assert.assertTrue(food.contains("Птицы"));
+    }
+
+    @Test
+    public void eatMeatContainsFishTest() throws Exception {
+        Feline feline = new Feline();
+        List<String> food = feline.eatMeat();
+
+        Assert.assertTrue(food.contains("Рыба"));
     }
 
     @Test
     public void getFamilyTest() {
         Feline feline = new Feline();
-        String family = feline.getFamily();
 
-        Assert.assertEquals("Кошачьи", family);
+        Assert.assertEquals("Кошачьи", feline.getFamily());
     }
 
     @Test
     public void getKittensDefaultTest() {
         Feline feline = new Feline();
-        int kittens = feline.getKittens();
 
-        Assert.assertEquals(1, kittens);
+        Assert.assertEquals(1, feline.getKittens());
     }
 
     @Test
     public void getKittensWithParamTest() {
         Feline feline = new Feline();
-        int kittens = feline.getKittens(5);
 
-        Assert.assertEquals(5, kittens);
+        Assert.assertEquals(5, feline.getKittens(5));
     }
 }
