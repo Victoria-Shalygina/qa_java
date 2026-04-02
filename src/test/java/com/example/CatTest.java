@@ -37,4 +37,4 @@ public class CatTest {
 
         Assert.assertTrue(food.contains("Рыба"));
     }
-}
+} // test
